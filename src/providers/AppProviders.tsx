@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Toaster } from 'sonner';
 
 import { AuthProvider } from '@/contexts/AuthContext';
@@ -17,7 +17,7 @@ const queryClient = new QueryClient({
 
 export function AppProviders({ children }: { children: React.ReactNode }) {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <QueryClientProvider client={queryClient}>
         <AuthProvider>
           {children}
@@ -25,6 +25,6 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
         </AuthProvider>
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
