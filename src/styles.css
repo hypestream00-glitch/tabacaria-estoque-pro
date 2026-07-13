@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 215 41% 7%;
+  --foreground: 210 20% 96%;
+  --card: 216 33% 11%;
+  --card-foreground: 210 20% 96%;
+  --primary: 205 94% 54%;
+  --primary-foreground: 213 100% 98%;
+  --secondary: 218 24% 16%;
+  --secondary-foreground: 210 20% 96%;
+  --muted: 217 20% 20%;
+  --muted-foreground: 216 12% 70%;
+  --destructive: 0 72% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --accent: 196 100% 44%;
+  --accent-foreground: 211 100% 98%;
+  --border: 217 22% 23%;
+  --input: 217 22% 24%;
+  --ring: 205 94% 54%;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-image: radial-gradient(circle at 20% 20%, rgba(17, 117, 212, 0.24), transparent 36%),
+    radial-gradient(circle at 80% 0%, rgba(0, 95, 204, 0.32), transparent 35%),
+    linear-gradient(145deg, #05080f 0%, #081223 35%, #091524 100%);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.fade-in {
+  animation: fade-in 260ms ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
